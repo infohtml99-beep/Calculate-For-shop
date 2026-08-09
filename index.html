@@ -1,38 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>คำนวณราคาตามน้ำหนัก</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-    
-    </header>
-    <span class="logo" id="logo"> หากเป็นพื้นที่ห่างไกล จะมีบวกเพิ่ม 20 บาท</span>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header></header>
+    <span class="logo" id="logo">
+      หากเป็นพื้นที่ห่างไกล จะมีบวกเพิ่ม 20 บาท</span
+    >
     <div class="container">
-
-
-        <h1>คำนวณราคาตามน้ำหนัก ของไปรษณีย์ </h1>
-        <h1 class="subtitle"> สำหรับ มนุษย์ ป้า</h1>
-        <label for="customerSelect">ลูกค้า</label>
-        <select id="customerSelect">
-            <option value="general" selected>ลูกค้าทั่วไป</option>
-            <option value="piyapranpriya">คุณปิยปราณปริยา</option>
-            <option value="customer_b">คุณธนาคาร โกฏคำลือ</option>
-            <option value="customer_c">คุณทิฆัมพร ประเสริฐ</option>
-        </select>
-        <div class="add-customer-row">
-            <input type="text" id="newCustomerName" placeholder="เพิ่มชื่อลูกค้าใหม่">
-            <button id="addCustomerBtn" type="button">เพิ่มลูกค้า</button>
-        </div>
-        <label for="inputValue">น้ำหนัก</label>
-        <input type="text" id="inputValue" placeholder="ตัวอย่าง: 1kg หรือ 500g">
-        <button id="calculateBtn">คำนวณราคา</button>
-        <div id="result" class="result-box hidden"></div>
-        <p class="hint">กรอกน้ำหนักเป็น kg หรือ g เช่น 1kg, 0.5kg, 500g แล้วกดปุ่ม</p>
+      <h1>คำนวณราคาตามน้ำหนัก ของไปรษณีย์</h1>
+      <h1 class="subtitle">สำหรับ มนุษย์ ป้า</h1>
+      <label for="customerSelect">ลูกค้า</label>
+      <select id="customerSelect">
+        <option value="general" selected>ลูกค้าทั่วไป</option>
+        <option value="piyapranpriya">คุณปิยปราณปริยา</option>
+        <option value="customer_b">คุณธนาคาร โกฏคำลือ</option>
+        <option value="customer_c">คุณทิฆัมพร ประเสริฐ</option>
+      </select>
+      <div class="add-customer-row">
+        <input
+          type="text"
+          id="newCustomerName"
+          placeholder="เพิ่มชื่อลูกค้าใหม่"
+        />
+        <button id="addCustomerBtn" type="button">เพิ่มลูกค้า</button>
+      </div>
+      <label for="inputValue">น้ำหนัก</label>
+      <input
+        type="text"
+        id="inputValue"
+        placeholder="ตัวอย่าง: 1kg หรือ 500g"
+      />
+      <button id="calculateBtn">คำนวณราคา</button>
+      <div id="result" class="result-box hidden"></div>
+      <p class="hint">
+        กรอกน้ำหนักเป็น kg หรือ g เช่น 1kg, 0.5kg, 500g แล้วกดปุ่ม
+      </p>
     </div>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
