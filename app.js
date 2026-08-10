@@ -104,57 +104,71 @@ function generalRate(grams) {
     return "✉ 48 ถึง 53 กล่อง 📦 C-D = 63-68 ";
   }
   if (grams >= 1500 && grams <= 1999) {
-    return "✉ 68 ถึง 73 กล่อง 📦 E-Fเล็ก = 68-73";
+    return "✉ 48 กล่อง 📦 E-Fเล็ก = 63-68";
   }
   if (grams >= 2000 && grams <= 2499) {
-    return "✉ 63 ถึง 73 กล่อง 📦 Fใหญ่ -G = 78-79";
+    return "✉ 63 ถึง 68 กล่อง 📦 Fใหญ่-G = 73- 78-79";
   }
   if (grams >= 2500 && grams <= 2999) {
-    return "✉ 78 ถึง 83 กล่อง 📦 G = 88-89";
+    return "✉ 78 กล่อง 📦 G = 78-83";
   }
   if (grams >= 3000 && grams <= 3499) {
-    return "✉ 88 ถึง 93 กล่อง 📦 H = 113-123";
+    return "✉ 83 กล่อง 88 📦 H = 113-123";
   }
   if (grams >= 3500 && grams <= 3999) {
     return "✉ 93 ถึง 98 กล่อง 📦 I = 158-188";
   }
   if (grams >= 4000 && grams <= 4499) {
-    return "✉ 103 ถึง 108 กล่อง 📦 I = 198-213";
+    return "✉ 103 ถึง 108 กล่อง 📦 I = 188-213";
   }
   if (grams >= 4500 && grams <= 4999) {
-    return "✉ 113 ถึง 118 กล่อง 📦 ตามความเหมาะสม = 238-248";
+    return " 📦 113 ถึง 118 ";
   }
   if (grams >= 5000 && grams <= 5499) {
-    return "✉ 103 ถึง 108 กล่อง 📦 ตามความเหมาะสม = 258-288";
+    return " 123 ถึง 133  ";
   }
   if (grams >= 5500 && grams <= 5999) {
-    return "✉ 120 ถึง 130";
+    return " 138 ถึง 143 ";
   }
   if (grams >= 6000 && grams <= 6499) {
-    return "✉ 150 ถึง 170";
+    return " 150 ถึง  153 ";
   }
   if (grams >= 6500 && grams <= 6999) {
-    return "✉ 188 ถึง 198";
+    return " 188 ถึง 198";
   }
   if (grams >= 7000 && grams <= 7499) {
-    return "✉ 198";
+    return " 198";
   }
   if (grams >= 7500 && grams <= 7999) {
-    return "✉ 213";
+    return " 213 หรือ หากเป็นพัสดุชิ้นใหญ่ คิดราคาตามระบบ" ;
   }
   if (grams >= 8000 && grams <= 8499) {
-    return "✉ 238";
+    return " 238 หรือ หากเป็นพัสดุชิ้นใหญ่ คิดราคาตามระบบ";
   }
   if (grams >= 8500 && grams <= 8999) {
-    return "✉ 248";
+    return "248 หรือ หากเป็นพัสดุชิ้นใหญ่ คิดราคาตามระบบ";
   }
   if (grams >= 9000 && grams <= 9499) {
-    return "✉ 258";
+    return " 258 หรือ หากเป็นพัสดุชิ้นใหญ่ คิดราคาตามระบบ ";
   }
   if (grams >= 9500 && grams <= 10000) {
-    return "✉ 288";
+    return " 288 หรือ หากเป็นพัสดุชิ้นใหญ่ คิดราคาตามระบบ ";
   }
   return null;
+}
+function thnaKhar(grams){
+    if (grams >=4000  || grams > 10000) {
+    return null;
+  }
+  if (grams >= 4000 && grams <= 5000){
+    return "83";
+  }
+  if (grams >= 8000 && grams <= 9000 ){
+    return "163";
+  }
+  if (grams >= 9000 && grams <= 10000){
+    return "153"
+  }
 }
 
 function parseWeight(rawValue) {
