@@ -2,6 +2,7 @@ function priceForWeight(grams, customerId) {
   if (customerId === "piyapranpriya") {
     return piyapranpriyaRate(grams);
   }
+  return thnaKhar (grams);
   return generalRate(grams);
   return nopKorn(grams);
 }
