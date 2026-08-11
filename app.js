@@ -3,6 +3,7 @@ function priceForWeight(grams, customerId) {
     return piyapranpriyaRate(grams);
   }
   return generalRate(grams);
+  return nopKorn(grams);
 }
 
 function piyapranpriyaRate(grams) {
@@ -86,28 +87,28 @@ function generalRate(grams) {
     return null;
   }
   if (grams >= 100 && grams <= 199) {
-    return "✉ 33 กล่อง AA-A = 33 // AB-2A = 38";
+    return "✉ 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 43";
   }
   if (grams >= 200 && grams <= 299) {
-    return "✉ 33 กล่อง AA-A = 33 // AB-2A = 38";
+    return "✉ 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 43";
   }
   if (grams >= 300 && grams <= 399) {
-    return "✉ 33 กล่อง AA-A = 33 // AB-2A = 38";
+    return "✉ 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 48";
   }
   if (grams >= 400 && grams <= 499) {
-    return "✉ 33 กล่อง AA-A = 33 // AB-2A = 38";
+    return "✉ 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 53";
   }
   if (grams >= 500 && grams <= 999) {
-    return "✉ 38 กล่อง 📦 B = 43 ";
+    return "✉ 38 กล่อง 📦 B-2B = 43 // C= 53";
   }
   if (grams >= 1000 && grams <= 1499) {
-    return "✉ 48 ถึง 53 กล่อง 📦 C-D = 63-68 ";
+    return "✉ 48 ถึง 53 กล่อง 📦 C-D = 63-68";
   }
   if (grams >= 1500 && grams <= 1999) {
     return "✉ 48 กล่อง 📦 E-Fเล็ก = 63-68";
   }
   if (grams >= 2000 && grams <= 2499) {
-    return "✉ 63 ถึง 68 กล่อง 📦 Fใหญ่-G = 73- 78-79";
+    return "✉ 63 ถึง 68 กล่อง 📦 Fใหญ่-G = 73-78-79";
   }
   if (grams >= 2500 && grams <= 2999) {
     return "✉ 78 กล่อง 📦 G = 78-83";
@@ -169,6 +170,19 @@ function thnaKhar(grams){
   if (grams >= 9000 && grams <= 10000){
     return "153"
   }
+}
+function nopKorn(grams){
+  if (grams >= 400 || grams > 1000){
+    return null;
+  }
+  if(grams >=100 && grams <=500)
+    return "33"
+}
+if (grams >=501 && grams <=1000){
+  return "38-43 กล่อง 2B = 48"
+}
+if (grams >= 1001 && <= 2000){
+  return "กล่อง C = 63 กล่อง D = 68 กล่อง E= 68"
 }
 
 function parseWeight(rawValue) {
