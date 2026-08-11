@@ -3,19 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>คำนวณราคาตามน้ำหนัก</title>
+    <title>เว็บคำนวณราคา Express Center</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <img src="logo.png" alt="Logo" class="brand-logo" />
-    </header>
+    <div class="top-bar">
+      <header>
+        <img src="logo.png" alt="Logo" class="brand-logo" />
+      </header>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="#home">หน้าแรก</a></li>
+          <li><a href="#about">เกี่ยวกับ</a></li>
+          <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
+      </nav>
+    </div>
     <span class="logo" id="logo">
-      หากเป็นพื้นที่ห่างไกล จะมีบวกเพิ่ม 20 บาท</span
+      <u>หากเป็นพื้นที่ห่างไกล จะมีบวกเพิ่ม 20 บาท</u></span
     >
     <div class="container">
-      <h1>คำนวณราคาตามน้ำหนัก ของไปรษณีย์</h1>
-      <h1 class="subtitle">ราคาอาจไม่ตรงเสมอไป ราคาเป็นเพียงตัวเลือกให้ดูเท่านั้น</h1>
+      <div>
+        <img src="bg7.png" alt="Logo" class="brand-logo" />
+      </div>
+      <h1 class="title">Calculate Thai-Post rates based on weight.</h1>
+      <h1 class="subtitle">
+        ราคาอาจไม่ตรงเสมอไป ราคาเป็นเพียงตัวเลือกให้ดูเท่านั้น
+      </h1>
       <label for="customerSelect">ลูกค้า</label>
       <select id="customerSelect">
         <option value="general" selected>ลูกค้าทั่วไป</option>
@@ -36,12 +50,12 @@
       <input
         type="text"
         id="inputValue"
-        placeholder="ตัวอย่าง: 1kg หรือ 500g"
+        placeholder="ตัวอย่าง: 1.5 หรือ 500g"
       />
       <button id="calculateBtn">คำนวณราคา</button>
       <div id="result" class="result-box hidden"></div>
       <p class="hint">
-        กรอกน้ำหนักเป็น kg หรือ g เช่น 1kg, 0.5kg, 500g แล้วกดปุ่ม
+        กรอกน้ำหนักเป็น kg หรือ g ได้ เช่น 1.5, 0.5, 500g แล้วกดปุ่ม
       </p>
     </div>
     <script src="app.js"></script>

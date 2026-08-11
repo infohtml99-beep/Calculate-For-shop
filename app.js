@@ -3,6 +3,16 @@ function priceForWeight(grams, customerId) {
     return piyapranpriyaRate(grams);
   }
   return generalRate(grams);
+  switch (customerId) {
+    case "piyapranpriya":
+      return piyapranpriyaRate(grams);
+    case "nopKorn":
+      return nopKorn(grams);
+    case "thnaKhar":
+      return thnaKhar(grams);
+    default:
+      return generalRate(grams);
+  }
 }
 
 function piyapranpriyaRate(grams) {
@@ -140,7 +150,7 @@ function generalRate(grams) {
     return " 198";
   }
   if (grams >= 7500 && grams <= 7999) {
-    return " 213 หรือ หากเป็นพัสดุชิ้นใหญ่ คิดราคาตามระบบ" ;
+    return " 213 หรือ หากเป็นพัสดุชิ้นใหญ่ คิดราคาตามระบบ";
   }
   if (grams >= 8000 && grams <= 8499) {
     return " 238 หรือ หากเป็นพัสดุชิ้นใหญ่ คิดราคาตามระบบ";
@@ -156,53 +166,102 @@ function generalRate(grams) {
   }
   return null;
 }
-function thnaKhar(grams){
-    if (grams >=4000  || grams > 10000) {
+function thnaKhar(grams) {
+  if (grams < 4000 || grams > 10000) {
     return null;
   }
-  if (grams >= 4000 && grams <= 5000){
+  if (grams >= 4000 && grams <= 5000) {
     return "83";
   }
-  if (grams >= 8000 && grams <= 9000 ){
+  if (grams >= 8000 && grams <= 9000) {
     return "163";
   }
-  if (grams >= 9000 && grams <= 10000){
-    return "153"
+  if (grams >= 9000 && grams <= 10000) {
+    return "153";
   }
 }
-function nopKorn(grams){
-  if (grams >= 400 || grams > 1000){
+function nopKorn(grams) {
+  if (grams < 100 || grams > 10000) {
     return null;
   }
-  if(grams >=100 && grams <=500)
-    return "33"
-}
-if (grams >=501 && grams <=1000){
-  return "38-43 กล่อง 2B = 48"
-}
-if (grams >= 1001 && <= 2000){
-  return "กล่อง C = 63 กล่อง D = 68 กล่อง E= 68"
+  if (grams >= 100 && grams <= 500) {
+    return "33";
+  }
+  if (grams >= 501 && grams <= 1000) {
+    return " 2B = 48";
+  }
+  if (grams >= 1001 && grams <= 2000) {
+    return "กล่อง C = 63 กล่อง D = 68 กล่อง E= 68";
+  }
+  if (grams >= 2001 && grams <= 3000) {
+    return "กล่อง E-F = 73 กล่อง G = 78 หรือกล่องตัดแปลง 78-83";
+  }
+  if (grams >= 3001 && grams <= 4000) {
+    return "กล่องกล่องตัดแปลง ใกล้กับกล่อง G  = 88 หรือกล่องใหญ่ = 93-98";
+  }
+  if (grams >= 4001 && grams <= 5000) {
+    return "กล่องใหญ่ = 103-108";
+  }
+  if (grams >= 5001 && grams <= 6000) {
+    return "กล่องใหญ่ = 113-118";
+  }
+  if (grams >= 6001 && grams <= 7000) {
+    return "กล่องใหญ่ = 123-133";
+  }
+  if (grams >= 7001 && grams <= 8000) {
+    return "กล่องใหญ่ = 138-143";
+  }
+  if (grams >= 8001 && grams <= 9000) {
+    return "กล่องใหญ่ = 150-153";
+  }
+  if (grams >= 9001 && grams <= 10000) {
+    return "กล่องใหญ่ = 188-198";
+  }
+  return null;
 }
 
 function parseWeight(rawValue) {
-  if (!rawValue) {
+  if (rawValue === null || rawValue === undefined) {
     return null;
   }
 
-  const raw = rawValue.trim().toLowerCase();
-
-  if (raw.endsWith("kg")) {
-    const num = parseFloat(raw.replace(/kg$/, "").trim());
-    return Number.isFinite(num) ? Math.round(num * 1000) : null;
+  const raw = String(rawValue).trim().toLowerCase();
+  if (!raw) {
+    return null;
   }
 
-  if (raw.endsWith("g")) {
-    const num = parseFloat(raw.replace(/g$/, "").trim());
-    return Number.isFinite(num) ? Math.round(num) : null;
+  const unitMatch = raw.match(
+    /^([0-9]+(?:\.[0-9]+)?)\s*(kg|g|kilogram|kilograms|gram|grams|กิโลกรัม|กรัม)$/,
+  );
+  if (unitMatch) {
+    const num = parseFloat(unitMatch[1]);
+    const unit = unitMatch[2];
+
+    if (
+      unit === "kg" ||
+      unit === "kilogram" ||
+      unit === "kilograms" ||
+      unit === "กิโลกรัม"
+    ) {
+      return Number.isFinite(num) ? Math.round(num * 1000) : null;
+    }
+
+    if (
+      unit === "g" ||
+      unit === "gram" ||
+      unit === "grams" ||
+      unit === "กรัม"
+    ) {
+      return Number.isFinite(num) ? Math.round(num) : null;
+    }
   }
 
   const num = parseFloat(raw);
-  return Number.isFinite(num) ? Math.round(num) : null;
+  if (Number.isFinite(num)) {
+    return raw.includes(".") ? Math.round(num * 1000) : Math.round(num);
+  }
+
+  return null;
 }
 
 function wrapNumeric(text) {

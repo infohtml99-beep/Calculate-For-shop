@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap");
 
 :root {
-  --green-900: #051f20;
-  --green-800: #0b2b26;
-  --green-700: #163832;
-  --green-600: #235347;
-  --green-300: #8eb69b;
-  --green-100: #daf1de;
-  --accent: #8eb69b;
+  --blue-900: #0a2e52;
+  --blue-800: #1a4d7a;
+  --blue-700: #2b6fa0;
+  --blue-600: #4a8fb8;
+  --blue-300: #7fb3d5;
+  --blue-100: #d6e9f5;
+  --accent: #7fb3d5;
 }
 
 body {
@@ -18,19 +18,54 @@ body {
   align-items: center;
   justify-content: center;
   background:
-    linear-gradient(rgba(3, 9, 7, 0.25), rgba(35, 83, 71, 0.25)),
-    url("bg10.jpg") center/cover no-repeat;
+    linear-gradient(rgba(10, 46, 82, 0.25), #b3d9f2),
+    url("bg11.png") center/cover no-repeat;
   position: relative;
   font-family:
     "Cormorant Garamond", "Noto Serif Thai", "Segoe UI", Tahoma, Geneva,
     Verdana, serif;
-  color: var(--green-900);
+  color: var(--blue-900);
 }
 
-header {
+.top-bar {
   position: absolute;
   top: 12px;
   left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  width: calc(100% - 24px);
+}
+
+.navbar {
+  background: rgba(214, 233, 245, 0.95);
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(10, 46, 82, 0.12);
+  color: var(--blue-900);
+  font-family: "Noto Serif Thai", serif;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: var(--blue-900);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+  color: var(--blue-600);
+}
+
+header {
+  position: static;
   z-index: 20;
 }
 
@@ -82,17 +117,23 @@ header,
 
 .subtitle {
   font-size: 1.05rem;
-  color: var(--green-700);
+  color: var(--blue-700);
 }
 
 .logo {
   font-size: 2rem;
-  color: hsl(0, 93%, 55%);
+  color: white;
   margin-top: 20px;
   display: inline-flex;
   align-items: center;
   padding-right: 16px;
   position: relative;
+  background: linear-gradient(90deg, var(--blue-700), var(--blue-600));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: "Cormorant Garamond", "Noto Serif Thai", serif;
+  font-weight: bold;
 }
 
 .logo::after {
@@ -102,7 +143,14 @@ header,
   top: 8px;
   height: calc(100% - 16px);
   width: 1px;
-  background: rgba(35, 83, 71, 0.45);
+  background: rgba(10, 46, 82, 0.45);
+}
+.title {
+  font-size: 1.8rem;
+  font-family: "Cormorant Garamond", "Noto Serif Thai", serif;
+  color: var(--blue-900);
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
 @keyframes glowPulse {
@@ -119,39 +167,39 @@ header,
 
 .container {
   width: min(520px, 90%);
-  background: rgba(218, 241, 222, 0.95); /* var(--green-100) light */
+  background: rgba(214, 233, 245, 0.95); /* var(--blue-100) light */
   padding: 28px 30px;
   border-radius: 22px;
-  box-shadow: 0 20px 40px rgba(3, 9, 7, 0.12);
-  color: var(--green-900);
+  box-shadow: 0 20px 40px rgba(10, 46, 82, 0.12);
+  color: var(--blue-900);
 }
 
 h1 {
   margin: 0 0 18px;
   font-size: 1.5rem;
   font-family: "Cormorant Garamond", "Noto Serif Thai", serif;
-  color: var(--green-900);
+  color: var(--blue-900);
 }
 
 label {
   display: block;
   margin-bottom: 8px;
   font-size: 0.95rem;
-  color: var(--green-700);
+  color: var(--blue-700);
 }
 
 input,
 select {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid rgba(35, 83, 71, 0.15);
+  border: 1px solid rgba(10, 46, 82, 0.15);
   border-radius: 12px;
   font-size: 1rem;
   outline: none;
   box-sizing: border-box;
   margin-bottom: 16px;
   background: #fff;
-  color: var(--green-900);
+  color: var(--blue-900);
 }
 
 .add-customer-row {
@@ -171,8 +219,8 @@ select {
 
 input:focus,
 select:focus {
-  border-color: var(--green-600);
-  box-shadow: 0 0 0 4px rgba(35, 83, 71, 0.06);
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 4px rgba(10, 46, 82, 0.06);
 }
 
 button {
@@ -180,8 +228,8 @@ button {
   padding: 12px 14px;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(180deg, var(--green-700), var(--green-600));
-  color: var(--green-100);
+  background: linear-gradient(180deg, var(--blue-700), var(--blue-600));
+  color: var(--blue-100);
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
@@ -195,10 +243,10 @@ button:hover {
   margin-top: 18px;
   padding: 18px 20px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--green-100), var(--green-300));
-  border: 1px solid rgba(35, 83, 71, 0.08);
-  box-shadow: 0 16px 30px rgba(3, 9, 7, 0.06);
-  color: var(--green-900);
+  background: linear-gradient(135deg, var(--blue-100), var(--blue-300));
+  border: 1px solid rgba(10, 46, 82, 0.08);
+  box-shadow: 0 16px 30px rgba(10, 46, 82, 0.06);
+  color: var(--blue-900);
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 500;
@@ -223,17 +271,17 @@ button:hover {
   display: block;
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: var(--green-800);
+  color: var(--blue-800);
 }
 
 .result-detail {
   margin-top: 10px;
   font-size: 0.95rem;
-  color: var(--green-700);
+  color: var(--blue-700);
 }
 
 .hint {
   margin-top: 12px;
-  color: var(--green-700);
+  color: var(--blue-700);
   font-size: 0.9rem;
 }
