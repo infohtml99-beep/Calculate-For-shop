@@ -1,15 +1,17 @@
 function priceForWeight(grams, customerId) {
-  if (customerId === "piyapranpriya") {
-    return piyapranpriyaRate(grams);
-  }
-  return generalRate(grams);
   switch (customerId) {
     case "piyapranpriya":
       return piyapranpriyaRate(grams);
+
     case "nopKorn":
-      return nopKorn(grams);
+      return nopKornRate(grams);
+
     case "thnaKhar":
-      return thnaKhar(grams);
+      return thnaKharRate(grams);
+
+    case "chaTri":
+      return chaTriRate(grams);
+
     default:
       return generalRate(grams);
   }
@@ -96,40 +98,40 @@ function generalRate(grams) {
     return null;
   }
   if (grams >= 100 && grams <= 199) {
-    return "✉ 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 43";
+    return "BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 43";
   }
   if (grams >= 200 && grams <= 299) {
-    return "✉ 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 43";
+    return "BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 43";
   }
   if (grams >= 300 && grams <= 399) {
-    return "✉ 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 48";
+    return "✉BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 48";
   }
   if (grams >= 400 && grams <= 499) {
-    return "✉ 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 53";
+    return "✉BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 53";
   }
   if (grams >= 500 && grams <= 999) {
-    return "✉ 38 กล่อง 📦 B-2B = 43 // C= 53";
+    return "✉BAG 38 กล่อง 📦 B-2B = 43 // C= 53";
   }
   if (grams >= 1000 && grams <= 1499) {
-    return "✉ 48 ถึง 53 กล่อง 📦 C-D = 63-68";
+    return "✉BAG 48 ถึง 53 กล่อง 📦 C-D = 63-68 กล่อง E =73";
   }
   if (grams >= 1500 && grams <= 1999) {
-    return "✉ 48 กล่อง 📦 E-Fเล็ก = 63-68";
+    return "✉BAG 48 กล่อง 📦 E-Fเล็ก = 63-68 กล่อง E =73 ";
   }
   if (grams >= 2000 && grams <= 2499) {
-    return "✉ 63 ถึง 68 กล่อง 📦 Fใหญ่-G = 73-78-79";
+    return "✉BAG 63 ถึง 68 กล่อง 📦 กล่อง E = 73-78 ,Fใหญ่-G = 73-78-79";
   }
   if (grams >= 2500 && grams <= 2999) {
-    return "✉ 78 กล่อง 📦 G = 78-83";
+    return "✉BAG 78 กล่อง 📦 G = 78-83";
   }
   if (grams >= 3000 && grams <= 3499) {
-    return "✉ 83 กล่อง 88 📦 H = 113-123";
+    return "✉BAG 83 กล่อง 88 📦 H = 113-123";
   }
   if (grams >= 3500 && grams <= 3999) {
-    return "✉ 93 ถึง 98 กล่อง 📦 I = 158-188";
+    return "✉BAG 93 ถึง 98 กล่อง 📦 I = 158-188";
   }
   if (grams >= 4000 && grams <= 4499) {
-    return "✉ 103 ถึง 108 กล่อง 📦 I = 188-213";
+    return "✉BAG 103 ถึง 108 กล่อง 📦 I = 188-213";
   }
   if (grams >= 4500 && grams <= 4999) {
     return " 📦 113 ถึง 118 ";
@@ -166,7 +168,7 @@ function generalRate(grams) {
   }
   return null;
 }
-function thnaKhar(grams) {
+function thnaKharRate(grams) {
   if (grams < 4000 || grams > 10000) {
     return null;
   }
@@ -180,7 +182,7 @@ function thnaKhar(grams) {
     return "153";
   }
 }
-function nopKorn(grams) {
+function nopKornRate(grams) {
   if (grams < 100 || grams > 10000) {
     return null;
   }
@@ -219,6 +221,25 @@ function nopKorn(grams) {
   }
   return null;
 }
+function chaTriRate(grams) {
+  if (grams < 100 || grams > 10000) {
+    return null;
+  }
+    if (grams >= 100 && grams <=500){
+       return "33";
+    }
+     if (grams >= 501 && grams <=1000){
+      return "48";
+     }
+      if (grams >= 1000 && grams <= 10000){
+        return "153";
+      }
+      
+    
+     
+   
+}
+
 
 function parseWeight(rawValue) {
   if (rawValue === null || rawValue === undefined) {
