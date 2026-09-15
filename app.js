@@ -43,10 +43,10 @@ function piyapranpriyaRate(grams) {
     return 48;
   }
   if (grams >= 2000 && grams <= 2499) {
-    return 63;
+    return "BAg = 63 & กล่อง D-7 & Dตัด = 73";
   }
   if (grams >= 2500 && grams <= 2999) {
-    return 68;
+    return "BAg = 68 & กล่อง D-7 & Dตัด = 73";
   }
   if (grams >= 3000 && grams <= 3499) {
     return "✉BAG = 73 , กล่อง D-7 & กล่อง Dตัดแปลง = 73";
