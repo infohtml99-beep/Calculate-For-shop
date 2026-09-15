@@ -49,19 +49,19 @@ function piyapranpriyaRate(grams) {
     return 68;
   }
   if (grams >= 3000 && grams <= 3499) {
-    return 73;
+    return "✉BAG = 73 , กล่อง D-7 & กล่อง Dตัดแปลง = 73";
   }
   if (grams >= 3500 && grams <= 3999) {
-    return 78;
+    return "✉BAG = 78 , กล่อง D-7 & กล่อง Dตัดแปลง =78";
   }
   if (grams >= 4000 && grams <= 4499) {
-    return 83;
+    return "✉BAG = 83 , กล่อง D-7 & กล่อง Dตัดแปลง =78";
   }
   if (grams >= 4500 && grams <= 4999) {
-    return 88;
+    return "✉BAG = 88 , กล่อง D-7 & กล่อง Dตัดแปลง =88";
   }
   if (grams >= 5000 && grams <= 5499) {
-    return 103;
+    return "✉BAG = 103 , กล่อง D-7 & กล่อง Dตัดแปลง =103";
   }
   if (grams >= 5500 && grams <= 5999) {
     return 108;
@@ -107,13 +107,13 @@ function generalRate(grams) {
     return "✉BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 48";
   }
   if (grams >= 400 && grams <= 499) {
-    return "✉BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 53";
+    return "✉BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 53 , D = 58";
   }
   if (grams >= 500 && grams <= 999) {
-    return "✉BAG 38 กล่อง 📦 B-2B = 43 // C= 53";
+    return "✉BAG 38 กล่อง 📦 B-2B = 43 // C = 53 , D = 58";
   }
   if (grams >= 1000 && grams <= 1499) {
-    return "✉BAG 48 ถึง 53 กล่อง 📦 C-D = 63-68 กล่อง E =73";
+    return "✉BAG 48 ถึง 53 กล่อง 📦 C = 63 & D = 68 กล่อง E =73";
   }
   if (grams >= 1500 && grams <= 1999) {
     return "✉BAG 48 กล่อง 📦 E-Fเล็ก = 63-68 กล่อง E =73 ";
@@ -173,13 +173,16 @@ function thnaKharRate(grams) {
     return null;
   }
   if (grams >= 4000 && grams <= 5000) {
-    return "83";
+    return "EMS = 83 , DHL = 78";
   }
   if (grams >= 8000 && grams <= 9000) {
-    return "163";
+    return "EMS = 163 , DHL = 148";
   }
   if (grams >= 9000 && grams <= 10000) {
     return "153";
+  }
+  if (grams >= 14000 && grams <= 15000) {
+    return "EMS = ราคาตามระบบ, DHL = 213";
   }
 }
 function nopKornRate(grams) {
