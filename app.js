@@ -37,10 +37,10 @@ function piyapranpriyaRate(grams) {
     return 38;
   }
   if (grams >= 1000 && grams <= 1499) {
-    return 48;
+    return "Bag *1*1* = 48 , KEX = 58 ";
   }
   if (grams >= 1500 && grams <= 1999) {
-    return 48;
+    return "Bag *1*1* = 48 , KEX = 58 ";
   }
   if (grams >= 2000 && grams <= 2499) {
     return "BAg = 63 & กล่อง D-7 & Dตัด = 73";
@@ -49,7 +49,7 @@ function piyapranpriyaRate(grams) {
     return "BAg = 68 & กล่อง D-7 & Dตัด = 73";
   }
   if (grams >= 3000 && grams <= 3499) {
-    return "✉BAG = 73 , กล่อง D-7 & กล่อง Dตัดแปลง = 73";
+    return "✉BAG = 73 , กล่อง D-7 & กล่อง Dตัดแปลง = 78";
   }
   if (grams >= 3500 && grams <= 3999) {
     return "✉BAG = 78 , กล่อง D-7 & กล่อง Dตัดแปลง =78";
