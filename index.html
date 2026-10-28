@@ -7,58 +7,101 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="top-bar">
-      <header>
-        <img src="logo.png" alt="Logo" class="brand-logo" />
-      </header>
-      <nav class="navbar">
-        <ul class="nav-links">
-          <li><a href="#home">หน้าแรก</a></li>
-          <li><a href="#about">เกี่ยวกับ</a></li>
-          <li><a href="#contact">ติดต่อ</a></li>
-        </ul>
-      </nav>
-    </div>
-    <span class="logo" id="logo">
-      <u>หากเป็นพื้นที่ห่างไกล จะมีบวกเพิ่ม 20 บาท</u></span
-    >
-    <div class="container">
-      <div>
-        <img src="bg7.png" alt="Logo" class="brand-logo" />
+    <div class="page-shell">
+      <aside class="sidebar" aria-label="Sidebar menu">
+        <div class="sidebar-brand">
+          <img src="logo.png" alt="Logo" class="brand-logo" />
+          <div class="brand-copy">
+            <span class="brand-name">Express Center</span>
+            <small>Shipping & Logistics</small>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Sidebar navigation">
+          <a href="#home" class="nav-item active">Dashboard</a>
+          <a href="#rate" class="nav-item">Pricing</a>
+          <a href="#customers" class="nav-item">Customers</a>
+          <a href="#services" class="nav-item">Services</a>
+          <a href="#reports" class="nav-item">Reports</a>
+        </nav>
+
+        <div class="sidebar-card">
+          <p class="card-label">Service Rate</p>
+          <strong>POST & PARCEL</strong>
+          <ul>
+            <li>Pickup support</li>
+            <li>Remote area fee</li>
+            <li>Weight checking</li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="main-panel">
+        <div class="top-bar">
+          <header class="brand-block">
+            <div class="brand-copy">
+              <span class="brand-name">เว็บคำนวณราคา</span>
+              <small>Operations Overview</small>
+            </div>
+          </header>
+          <nav class="navbar" aria-label="Main navigation">
+            <ul class="nav-links">
+              <li><a href="#home">หน้าแรก</a></li>
+              <li><a href="#about">เกี่ยวกับ</a></li>
+              <li><a href="#contact">ติดต่อ</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="info-banner" id="logo">
+          <span class="badge">Service Notice</span>
+          <span>หากเป็นพื้นที่ห่างไกล จะมีบวกเพิ่ม 20 บาท</span>
+        </div>
+
+        <main class="content-grid">
+          <section class="container" aria-label="Rate calculator">
+            <p class="eyebrow">Corporate Pricing System</p>
+            <h1 class="title">Calculate Thai-Post rates based on weight.</h1>
+            <h2 class="subtitle">
+              ราคาอาจไม่ตรงเสมอไป ราคาเป็นเพียงตัวเลือกให้ดูเท่านั้น
+            </h2>
+
+            <label for="customerSelect">ลูกค้า</label>
+            <select id="customerSelect">
+              <option value="general" selected>ลูกค้าทั่วไป</option>
+              <option value="piyapranpriya">คุณปิยปราณปริยา</option>
+              <option value="thnaKhar">คุณธนาคาร โกฏคำลือ</option>
+              <option value="customer_c">คุณทิฆัมพร ประเสริฐ</option>
+              <option value="nopKorn">คุณนพกร นิตย์โฆษกุล</option>
+              <option value="chaTri ">คุณชาตรี ศรีสมทรง</option>
+            </select>
+
+            <div class="add-customer-row">
+              <input
+                type="text"
+                id="newCustomerName"
+                placeholder="เพิ่มชื่อลูกค้าใหม่"
+              />
+              <button id="addCustomerBtn" type="button">เพิ่มลูกค้า</button>
+            </div>
+
+            <label for="inputValue">น้ำหนัก</label>
+            <input
+              type="text"
+              id="inputValue"
+              placeholder="ตัวอย่าง: 1.5 หรือ 500g"
+            />
+
+            <button id="calculateBtn">คำนวณราคา</button>
+            <div id="result" class="result-box hidden"></div>
+            <p class="hint">
+              กรอกน้ำหนักเป็น kg หรือ g ได้ เช่น 1.5, 0.5, 500g แล้วกดปุ่ม
+            </p>
+          </section>
+        </main>
       </div>
-      <h1 class="title">Calculate Thai-Post rates based on weight.</h1>
-      <h1 class="subtitle">
-        ราคาอาจไม่ตรงเสมอไป ราคาเป็นเพียงตัวเลือกให้ดูเท่านั้น
-      </h1>
-      <label for="customerSelect">ลูกค้า</label>
-    <select id="customerSelect">
-        <option value="general" selected>ลูกค้าทั่วไป</option>
-        <option value="piyapranpriya">คุณปิยปราณปริยา</option>
-        <option value="thnaKhar">คุณธนาคาร โกฏคำลือ</option>
-        <option value="customer_c">คุณทิฆัมพร ประเสริฐ</option>
-        <option value="nopKorn">คุณนพกร นิตย์โฆษกุล</option>
-        <option value="chaTri ">คุณชาตรี ศรีสมทรง</option>
-      </select>
-      <div class="add-customer-row">
-        <input
-          type="text"
-          id="newCustomerName"
-          placeholder="เพิ่มชื่อลูกค้าใหม่"
-        />
-        <button id="addCustomerBtn" type="button">เพิ่มลูกค้า</button>
-      </div>
-      <label for="inputValue">น้ำหนัก</label>
-      <input
-        type="text"
-        id="inputValue"
-        placeholder="ตัวอย่าง: 1.5 หรือ 500g"
-      />
-      <button id="calculateBtn">คำนวณราคา</button>
-      <div id="result" class="result-box hidden"></div>
-      <p class="hint">
-        กรอกน้ำหนักเป็น kg หรือ g ได้ เช่น 1.5, 0.5, 500g แล้วกดปุ่ม
-      </p>
     </div>
+
     <script src="app.js"></script>
   </body>
 </html>
