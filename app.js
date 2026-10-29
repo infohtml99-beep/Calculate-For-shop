@@ -12,8 +12,24 @@ function priceForWeight(grams, customerId) {
     case "chaTri":
       return chaTriRate(grams);
 
+    case "HuntingDog":
+      return HuntingDogRate(grams);
+    
+    case "Express":
+      return ExpressRate(grams);
+
+    case "OpLink":
+      return OpLinkRate(grams);
+    
+    case "Koy":
+      return KoyRate(grams);
+
+    case "generalBest":
+      return generalBestRate(grams);
+
     default:
       return generalRate(grams);
+
   }
 }
 
@@ -238,12 +254,68 @@ function chaTriRate(grams) {
         return "153";
       }
       
-    
-     
-   
 }
-
-
+function HuntingDogRate(grams) {
+  if (grams < 100 || grams > 10000) {
+    return null;
+  }
+  if (grams >= 2000 && grams <= 5000) {
+    return "KEX : 126";
+  }
+  if (grams >= 5000 && grams <= 10000) {
+    return "KEX : 146";
+  }
+  if (grams >= 10000 && grams <= 15000) {
+    return "KEX : 153";
+  }
+}
+function ExpressRate(grams) {
+  if (grams < 100 || grams > 10000) {
+    return null;
+  }
+  if (grams >= 2000 && grams <= 5000) {
+      return "KEX : 83";
+    }
+}
+function OpLinkRate(grams) {
+  if (grams < 100 || grams > 10000) {
+    return null;
+  }
+  if (grams >= 6000 && grams <= 9000) {
+    return "KEX : 93";
+  }
+  if (grams >= 9000 && grams <= 11000) {
+    return "KEX : 113";
+  }
+}
+function KoyRate(grams) {
+  if (grams < 100 || grams > 10000) {
+    return null;
+  }
+  if (grams >= 1000 && grams <= 5000) {
+    return "DHL ขนาด C+8 & C+15 = 63 // ขนาด G = 78";
+  }
+  if (grams >= 5000 && grams <= 10000) {
+    return "DHL ขนาด G  : 78 // ขนาด H = 88";
+  }
+}
+function generalBestRate(grams) {
+  if (grams < 100 || grams > 10000) {
+    return null;
+  }
+  if (grams >= 100 && grams <= 1000) {
+    return " ขนาด 110*5*5 = 78";
+  }
+  if (grams >= 1001 && grams <= 5000) {
+    return "ขนาด 110*5*5 = 78  ///  ขนาด 120*10*10 = 83";
+  }
+  if (grams >= 5000 && grams <= 10000) {
+    return "113";
+  }
+  if (grams >= 10000 && grams <= 15000) {
+    return " ขนาด 150*15*15 = 143";
+}
+}
 function parseWeight(rawValue) {
   if (rawValue === null || rawValue === undefined) {
     return null;
