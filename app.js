@@ -71,7 +71,7 @@ function piyapranpriyaRate(grams) {
     return "✉BAG = 78 , กล่อง D-7 & กล่อง Dตัดแปลง =78";
   }
   if (grams >= 4000 && grams <= 4499) {
-    return "✉BAG = 83 , กล่อง D-7 & กล่อง Dตัดแปลง =78";
+    return "✉BAG = 83 , กล่อง D-7 & กล่อง Dตัดแปลง =88";
   }
   if (grams >= 4500 && grams <= 4999) {
     return "✉BAG = 88 , กล่อง D-7 & กล่อง Dตัดแปลง =88";
