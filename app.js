@@ -114,10 +114,10 @@ function generalRate(grams) {
     return null;
   }
   if (grams >= 100 && grams <= 199) {
-    return "BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 43";
+    return "BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 48";
   }
   if (grams >= 200 && grams <= 299) {
-    return "BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 43";
+    return "BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 48";
   }
   if (grams >= 300 && grams <= 399) {
     return "✉BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 48";
@@ -126,7 +126,7 @@ function generalRate(grams) {
     return "✉BAG 33 กล่อง AA-A = 33 // AB-2A-B = 38 //C = 53 , D = 58";
   }
   if (grams >= 500 && grams <= 999) {
-    return "✉BAG 38 กล่อง 📦 B-2B = 43 // C = 53 , D = 58";
+    return "✉BAG 38 กล่อง 📦 B-2B = 48 // C = 53 , D = 58";
   }
   if (grams >= 1000 && grams <= 1499) {
     return "✉BAG 48 ถึง 53 กล่อง 📦 C = 63 & D = 68 กล่อง E =73";
